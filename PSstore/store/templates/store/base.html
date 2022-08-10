@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <link  rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <meta charset="UTF-8">
+    <title>IT'S NEW STORY</title>
+
+</head>
+<body>
+    <h2 class="register-wrap">
+        <a class="register" href="{% url 'register' %}">
+            <div class="box-2">
+                <div class="btn btn-two">
+                    <span>Регистрация</span>
+                </div>
+            </div>
+        </a>
+    </h2>
+    <h2>
+        <a class="register" href="{% url 'login' %}">
+            <div class="box-2">
+                <div class="btn btn-two">
+                    <span>Вход</span>
+                </div>
+            </div>
+        </a>
+    </h2>
+
+    <h1> Hello world</h1>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
