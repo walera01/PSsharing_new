@@ -4,10 +4,7 @@
 
 <form method="post">
     {% csrf_token %}
-
-    {% for i in form %}
-        <p>{{i.label}}{{i}}</p>
-    {% endfor %}
-    <button type="submit">Регистрация</button>
+    {{form.as_p}}
+    <button type="submit">Войти</button>
 </form>
 {% endblock %}

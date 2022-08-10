@@ -20,7 +20,7 @@ class RegisterUser(CreateView):
 class Login(LoginView):
     form_class = LoginUserForm
     template_name = 'store/login.html'
-    
+
 
 
 def logout_use(request):
