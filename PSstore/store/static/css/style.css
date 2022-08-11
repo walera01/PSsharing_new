@@ -23,7 +23,8 @@ body{
 /*    box-shadow: 0 0 10px 2px #19fae7;*/
 /*}*/
 div[class*=box] {
-  height: 3vw;
+  font-size: 2vw;
+  height: auto;
   width: 12vw;
   display: flex;
   justify-content: center;
@@ -70,6 +71,7 @@ div[class*=box] {
   border: 1px solid rgba(255,255,255,0.2);
   background-color: rgba(255,255,255,0.1);
   border-radius: 20px;
+
 }
 .btn-two::after {
   content: '';
@@ -87,9 +89,11 @@ div[class*=box] {
 .btn-two:hover::before {
   transform: rotate(-45deg);
   background-color: rgba(255,255,255,0);
+
 }
 .btn-two:hover::after {
   transform: rotate(45deg);
   background-color: rgba(255,255,255,0);
+
 }
 
