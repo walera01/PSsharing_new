@@ -5,10 +5,13 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, CreateView
 from .forms import *
+from .models import *
 
 
-class Main(TemplateView):
-    template_name = "store/base.html"
+class Main(ListView):
+    model = ProductModel
+    template_name = "store/main.html"
+    context_object_name = 'model'
 
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
@@ -33,6 +36,12 @@ class Login(LoginView):
 def logout_use(request):
     logout(request)
     return redirect('login')
+
+class AddProduct(CreateView):
+    form_class = AddProduktForm
+    template_name = 'store/addproduct.html'
+    def get_success_url(self):
+        return reverse_lazy('main')
 
 
 def main(request):

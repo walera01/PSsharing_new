@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     {% load static %}
-
     <link  rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <meta charset="UTF-8">
     <title>IT'S NEW STORY</title>
 
 </head>
 <body>
-
+<div class="main_logo">
+    <a href="{% url 'main' %}"><img src="{% static 'images/logo.png' %}"></a>
+</div>
 
 {% if user.is_authenticated %}
  <h2>
@@ -50,10 +51,13 @@
             </div>
         </a>
     </h2>
-
+    <div class="main_round">
+                <div class="round"></div>
+                <div class="round2"></div>
+                <div class="round3"></div>
+    </div>
 {% endif %}
 
-    <h1> Hello world</h1>
     {% block content %}
 
     {% endblock %}

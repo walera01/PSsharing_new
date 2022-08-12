@@ -1,13 +1,16 @@
 {% extends 'store/base.html' %}
 {% block content %}
 <h1>{{title}}</h1>
-
+{{user.error}}
 <form method="post">
     {% csrf_token %}
+    <div class="fields_register">
+        {% for i in form %}
+            <p class="label_register">{{i.label}}</p>
+            <p class="field_register">{{i}}</p>
+        {% endfor %}
+        <button class="login_button" type="submit">Регистрация</button>
+    </div>
 
-    {% for i in form %}
-        <p>{{i.label}}{{i}}</p>
-    {% endfor %}
-    <button type="submit">Регистрация</button>
 </form>
 {% endblock %}
