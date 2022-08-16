@@ -4,7 +4,7 @@ body{
     max-width: 97vw;
 
     background-size: auto 400vw;
-    margin-top: -13vw;
+
 
 }
 
@@ -204,13 +204,44 @@ div[class*=box] {
 .main_round{
     margin-left: 15vw;
     margin-top: 15vw;
+    position: absolute;
 }
+.main_table{
 
+    width: 80vw;
+    margin-left: 14vw;
+
+
+}
 .product{
-    margin-left: 20vw;
-
+    width: 20vw;
+    height: 30vw;
+    padding: 3vw;
+    display: inline-block;
+    float: left;
 }
-.product p{
-    margin-left: 20vw;
+.product h1{
+    font-family: "Droid Sans Mono";
+    color: bisque;
+    font-size: 2vw;
+    position: absolute;
+}
 
+.imgproduct{
+    width: 20vw;
+    mix-blend-mode: color-burn;
+    border-radius: 50%;
+    -webkit-box-reflect: below 10px ;
+}
+.addpost{
+    text-decoration: none;
+    position: absolute;
+    font-size: 2vw;
+    color: white;
+    font-family: "JetBrains Mono Light";
+    padding: 5px;
+    background-color: cadetblue;
+    margin-left: 50%;
+    opacity: .5;
+    box-shadow: 0 0 30px 3px darkcyan;
 }

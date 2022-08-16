@@ -11,6 +11,9 @@
 <div class="main_logo">
     <a href="{% url 'main' %}"><img src="{% static 'images/logo.png' %}"></a>
 </div>
+    {% if request.user.is_superuser %}
+        <a class="addpost" href="{url 'addproduct'}">Добавить</a>
+    {% endif %}
 
 {% if user.is_authenticated %}
  <h2>
@@ -51,13 +54,13 @@
             </div>
         </a>
     </h2>
+
+{% endif %}
     <div class="main_round">
                 <div class="round"></div>
                 <div class="round2"></div>
                 <div class="round3"></div>
     </div>
-{% endif %}
-
     {% block content %}
 
     {% endblock %}

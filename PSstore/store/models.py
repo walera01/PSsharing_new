@@ -8,3 +8,4 @@ class ProductModel(models.Model):
     prise_week = models.FloatField()
     prise_monthe = models.FloatField()
     img = models.ImageField(verbose_name="Изображение")
+
