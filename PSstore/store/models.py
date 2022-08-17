@@ -9,3 +9,9 @@ class ProductModel(models.Model):
     prise_monthe = models.FloatField()
     img = models.ImageField(verbose_name="Изображение")
 
+class OrderModel(models.Model):
+    name = models.CharField(name='name', max_length=100)
+    number = models.CharField(max_length=13)
+    order_date = models.CharField(max_length=20)
+    order_date_end = models.CharField(max_length=20)
+    prod = models.ForeignKey("ProductModel", on_delete=models.CASCADE)

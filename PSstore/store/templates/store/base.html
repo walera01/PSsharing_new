@@ -8,6 +8,8 @@
 
 </head>
 <body>
+
+
 <div class="main_logo">
     <a href="{% url 'main' %}"><img src="{% static 'images/logo.png' %}"></a>
 </div>
@@ -27,7 +29,7 @@
     </h2>
 
     <h2 class="register-wrap">
-        <a class="register" href="{% url 'register' %}">
+        <a class="register">
             <div class="box-2">
                 <div class="btn btn-two">
                     <span>{{user.username}}</span>

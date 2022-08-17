@@ -37,6 +37,11 @@ def logout_use(request):
     logout(request)
     return redirect('login')
 
+class Order(CreateView):
+    form_class = OrderForm
+    template_name = "store/order.html"
+    def get_success_url(self):
+        return reverse_lazy('main')
 class AddProduct(CreateView):
     form_class = AddProduktForm
     template_name = 'store/addproduct.html'

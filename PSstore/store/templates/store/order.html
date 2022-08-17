@@ -1,0 +1,15 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="fields_register">
+        {% for i in form %}
+            <p class="label_register">{{i.label}}</p>
+            <p class="field_register">{{i}}</p>
+        {% endfor %}
+    </div>
+</form>
+
+
+{% endblock %}

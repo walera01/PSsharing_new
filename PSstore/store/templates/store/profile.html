@@ -1,0 +1,12 @@
+{% extends 'store/base.html' %}
+{% block content %}
+
+
+{% if request.user.is_authenticated %}
+<div class="product">
+    <h1>{{user.username}}</h1>
+</div>
+{% endif %}
+
+
+{% endblock %}

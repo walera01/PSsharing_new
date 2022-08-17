@@ -216,19 +216,29 @@ div[class*=box] {
 .product{
     width: 20vw;
     height: 30vw;
-    padding: 3vw;
+    padding: 5vw;
     display: inline-block;
     float: left;
+
+
 }
 .product h1{
+    background-color: rgba(110, 109, 109, 0.6);
+    box-shadow: 0 0 5px 2px rgba(110, 109, 109, 0.6);
+    margin-top: -1vw;
     font-family: "Droid Sans Mono";
     color: bisque;
     font-size: 2vw;
     position: absolute;
+    text-align: center;
+    padding: 1vw;
+    width: 20vw;
 }
 
 .imgproduct{
-    width: 20vw;
+    width: 22vw;
+    height: 17vw;
+    object-fit: cover;
     mix-blend-mode: color-burn;
     border-radius: 50%;
     -webkit-box-reflect: below 10px ;

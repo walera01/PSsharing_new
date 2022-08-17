@@ -18,8 +18,12 @@ class RegisterUserForm(UserCreationForm):
             'username': forms.TextInput(attrs = {'class':'form-input'}),
             'password1': forms.PasswordInput(attrs = {'class': 'form-input'}),
             'password2': forms.PasswordInput(attrs = {'class': 'form-input'})
-
         }
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = OrderModel
+        exclude = [""]
 
 class LoginUserForm(AuthenticationForm):
     username = forms.CharField(label='Login', widget=forms.TextInput(attrs = {'class':'form-input'}))
