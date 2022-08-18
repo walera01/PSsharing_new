@@ -109,13 +109,15 @@ div[class*=box] {
 }
 .label_register{
   font-size: 2vw;
+    display: inline-block;
 }
 .field_register input{
   width: 35vw;
   height: 3vw;
   font-size: 3vw;
   border-radius: 20px;
-  box-shadow: 0 0 9px 6px aqua;
+  box-shadow: 0 0 9px 3px aqua;
+    font-family: "JetBrains Mono Light";
 }
 .div_button{
     margin-left: 10vw;
@@ -254,4 +256,11 @@ div[class*=box] {
     margin-left: 50%;
     opacity: .5;
     box-shadow: 0 0 30px 3px darkcyan;
+}
+.data{
+    width: 20vw;
+    height: 3vw;
+    display: inline;
+    font-size: 2vw;
+    font-family: "JetBrains Mono Light";
 }
