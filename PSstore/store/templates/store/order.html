@@ -2,14 +2,32 @@
 {% block content %}
 
 <form method="post">
-    {% csrf_token %}
-    <div class="fields_register">
+<!--    {% csrf_token %}-->
+<!--    <div class="fields_register">-->
+<!--        <p class="label_register">Имя</p>-->
+<!--        <p class="field_register">{{form.name}}</p>-->
+
+<!--        <p class="label_register">Номер телефона</p>-->
+<!--        <p class="field_register">{{form.number}}</p>-->
+
+<!--<p class="label_register">До</p>-->
+<!--        <p class="label_register">Введите дату аренды c</p>-->
+<!--        <p class="field_register">-->
+
+<!--            <input type="date" name="calender" value="{{context.now}}" min="{{now}}">-->
+
+<!--            <input type="date" name="calender" value="{{context.now}}" min="{{now}}">-->
+<!--        </p>-->
+
+
+<!--    </div>-->
+<!--</form>-->
+{% csrf_token %}
+        <div class="fields_register">
         {% for i in form %}
             <p class="label_register">{{i.label}}</p>
             <p class="field_register">{{i}}</p>
         {% endfor %}
-    </div>
+        </div>
 </form>
-
-
 {% endblock %}

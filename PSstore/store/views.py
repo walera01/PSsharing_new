@@ -6,11 +6,15 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, CreateView
 from .forms import *
 from .models import *
+from datetime import datetime
+
+
 
 
 class Main(ListView):
     model = ProductModel
     template_name = "store/main.html"
+
     context_object_name = 'model'
 
 class RegisterUser(CreateView):
@@ -40,6 +44,15 @@ def logout_use(request):
 class Order(CreateView):
     form_class = OrderForm
     template_name = "store/order.html"
+
+    # def get(self, request, *args, **kwargs):
+    #     now = datetime.date(datetime.now())
+    #     context = {"now": str(now),
+    #                "form": OrderForm,
+    #                }
+    #     print(context)
+    #     print(now)
+    #     return render(request, "store/order.html", context=context)
     def get_success_url(self):
         return reverse_lazy('main')
 class AddProduct(CreateView):
