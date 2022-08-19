@@ -12,7 +12,7 @@ class ProductModel(models.Model):
 class OrderModel(models.Model):
     name = models.CharField(name='name', max_length=100)
     number = models.CharField(max_length=13)
-    order_date = models.DateTimeField()
-    order_date_end = models.DateTimeField()
-    prod = models.ForeignKey("ProductModel", on_delete=models.CASCADE)
+    order_date = models.CharField(max_length=20)
+    order_date_end = models.CharField(max_length=20, null=True)
+    prod = models.ForeignKey("ProductModel", null=True, on_delete=models.CASCADE)
 

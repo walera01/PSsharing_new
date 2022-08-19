@@ -1,16 +1,19 @@
 {% extends 'store/base.html' %}
 {% block content %}
 
-<form method="post">
+<form method="post" action="" >
     {% csrf_token %}
     <div class="fields_register">
         <p class="label_register">Имя</p>
-        <p class="field_register">{{form.name}}</p>
+        <p class="field_register"><input name="name" type="text"></p>
 
         <p class="label_register">Номер телефона</p>
-        <p class="field_register">{{form.number}}</p>
+        <p class="field_register"><input name="tel" type="tel"></p>
 
         <p class="field_register">
+        {% if err %}
+            <p class="label_register">{{err}}</p>
+        {% endif %}
             <p class="label_register">С
             <input class="data" type="date" name="calender" value="{{now}}" min="{{now}}"></p>
             <p class="label_register">До

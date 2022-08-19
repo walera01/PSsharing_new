@@ -241,7 +241,7 @@ div[class*=box] {
     width: 22vw;
     height: 17vw;
     object-fit: cover;
-    mix-blend-mode: color-burn;
+
     border-radius: 50%;
     -webkit-box-reflect: below 10px ;
 }

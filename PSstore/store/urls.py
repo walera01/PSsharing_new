@@ -7,5 +7,5 @@ urlpatterns = [
     path('login', Login.as_view(), name='login'),
     path('logout', logout_use, name='logout'),
     path('addproduct', AddProduct.as_view(), name="addproduct"),
-    path('order/<int:id>', Order.as_view(), name='order'),
+    path('order/<int:id>', order, name='order'),
 ]
