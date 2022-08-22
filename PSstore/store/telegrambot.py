@@ -26,10 +26,10 @@ import requests
 
 
 import telebot
-class SendMessage():
 
-    def Send(self, message):
-        token = '5573811919:AAFM0EG5FREx2Sf5j8qf_Whb9g963ixKzAE'
-        bot = telebot.TeleBot(token)
-        chatId = '417440391'
-        bot.send_message(chatId, text=message)
+
+def Send(message):
+    token = '5573811919:AAFM0EG5FREx2Sf5j8qf_Whb9g963ixKzAE'
+    bot = telebot.TeleBot(token)
+    chatId = '417440391'
+    bot.send_message(chatId, text=message)

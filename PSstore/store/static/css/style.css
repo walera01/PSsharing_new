@@ -264,3 +264,13 @@ div[class*=box] {
     font-size: 2vw;
     font-family: "JetBrains Mono Light";
 }
+.errorlist{
+    position: absolute;
+    font-size: 3vw;
+    color: white;
+    font-family: "JetBrains Mono Light";
+    padding: 5px;
+    background-color: cadetblue;
+    opacity: .5;
+    box-shadow: 0 0 30px 3px darkcyan;
+}

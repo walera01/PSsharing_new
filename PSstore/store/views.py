@@ -7,6 +7,7 @@ from django.views.generic import ListView, TemplateView, CreateView
 from .forms import *
 from .models import *
 from datetime import datetime
+from .telegrambot import Send
 
 
 
@@ -42,27 +43,31 @@ def logout_use(request):
     return redirect('login')
 
 def order(request, id):
-    form = OrderForm()
+    model = OrderModel()
     now = datetime.date(datetime.now())
     context = {"now": str(now) }
     if request.method == 'POST':
-        if not request.POST.get('calender-end') or request.POST.get('calender-end')>=request.POST.get('calender'):
-            form.name = request.POST.get('name')
-            form.number = request.POST.get('tel')
-            form.order_date = request.POST.get('calender')
-            if request.POST.get('calender-end'):
-                form.order_date_end = request.POST.get('calender-end')
-            form.prod = ProductModel.objects.get(id=id)
-            print(form.name)
-            print(form.number)
-            print(form.order_date)
-            print(form.prod)
-            if form.is_valid():
-                pass
-            form.save()
-            err = "Вам позвонят в течении 15 минут"
-            # else:
-            #     err = "что-то не так"
+        if not request.POST.get('calender_end') or request.POST.get('calender_end') >= request.POST.get('calender'):
+            model.name = request.POST.get('name')
+            model.number = request.POST.get('tel')
+            model.order_date = request.POST.get('calender')
+            if request.POST.get('calender_end'):
+                model.order_date_end = request.POST.get('calender_end')
+            model.prod = ProductModel.objects.get(id=id)
+            in_tegram = f"Имя: {model.name}\n " \
+                        f"Номер телефона: {model.number}\n" \
+                        f"Дата с: {model.order_date}\n" \
+                        f"До: {model.order_date_end}\n" \
+                        f"Модель: {model.prod}"
+            try:
+                Send(in_tegram)
+            except Exception as e:
+                print(e, "В телеграм не пошло")
+            try:
+                model.save()
+                err = "Вам позвонят в течении 15 минут"
+            except:
+                err = "что-то пошло не так"
             context.update({"err": err})
         else:
             err = "Введены неправильные даты"
