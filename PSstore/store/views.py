@@ -10,13 +10,23 @@ from datetime import datetime
 from .telegrambot import Send
 
 
-
+class AddGames(CreateView):
+    form_class = GamesForm
+    template_name = 'store/addgames.html'
 
 class Main(ListView):
     model = ProductModel
     template_name = "store/main.html"
-
     context_object_name = 'model'
+
+    def get(self, request, *args, **kwargs):
+        game = GamesModel.objects.all()
+        model = ProductModel.objects.all()
+        context = {'game': game,
+                   'model': model
+                   }
+        return render(request, "store/main.html", context=context)
+
 
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
@@ -75,37 +85,7 @@ def order(request, id):
 
     return render(request, "store/order.html", context=context)
 
-class Order(CreateView):
-    form_class = OrderForm
-    template_name = "store/order.html"
 
-    def get(self, request, *args, **kwargs):
-        now = datetime.date(datetime.now())
-        context = {"now": str(now),
-                   "form": OrderForm,
-                   }
-
-        return render(request, "store/order.html", context=context)
-
-    def post(self, request, *args, **kwargs):
-        now = datetime.date(datetime.now())
-        print(request.form["calender_end"],request.form["calender"])
-        if request.form["calender_end"] < request.form["calender"]:
-
-            err = "Ошибка ввода даты"
-            context = {"now": str(now),
-                       "form": OrderForm,
-                       "err": err,
-                       }
-            return render(request, "store/order.html", context = context)
-        context = {"now": str(now),
-                   "form": OrderForm,
-                   }
-        print(context)
-        print(now)
-        return render(request, "store/order.html", context=context)
-    def get_success_url(self):
-        return reverse_lazy('main')
 class AddProduct(CreateView):
     form_class = AddProduktForm
     template_name = 'store/addproduct.html'

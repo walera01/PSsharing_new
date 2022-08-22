@@ -17,47 +17,51 @@
         <a class="addpost" href="{url 'addproduct'}">Добавить</a>
     {% endif %}
 
-{% if user.is_authenticated %}
- <h2>
-        <a class="register" href="{% url 'logout' %}">
-            <div class="box-2">
-                <div class="btn btn-two">
-                    <span>Выход</span>
-                </div>
-            </div>
-        </a>
-    </h2>
 
-    <h2 class="register-wrap">
-        <a class="register">
-            <div class="box-2">
-                <div class="btn btn-two">
-                    <span>{{user.username}}</span>
-                </div>
-            </div>
-        </a>
-    </h2>
-{% else %}
-    <h2 class="register-wrap">
-        <a class="register" href="{% url 'register' %}">
-            <div class="box-2">
-                <div class="btn btn-two">
-                    <span>Регистрация</span>
-                </div>
-            </div>
-        </a>
-    </h2>
- <h2>
-        <a class="register" href="{% url 'login' %}">
-            <div class="box-2">
-                <div class="btn btn-two">
-                    <span>Вход</span>
-                </div>
-            </div>
-        </a>
-    </h2>
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45; ВХОД И РЕГИСТРАЦИЯ -&#45;&#45;&#45;&#45;-->
 
-{% endif %}
+
+<!--{% if user.is_authenticated %}-->
+<!-- <h2>-->
+<!--        <a class="register" href="{% url 'logout' %}">-->
+<!--            <div class="box-2">-->
+<!--                <div class="btn btn-two">-->
+<!--                    <span>Выход</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </h2>-->
+
+<!--    <h2 class="register-wrap">-->
+<!--        <a class="register">-->
+<!--            <div class="box-2">-->
+<!--                <div class="btn btn-two">-->
+<!--                    <span>{{user.username}}</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </h2>-->
+<!--{% else %}-->
+<!--    <h2 class="register-wrap">-->
+<!--        <a class="register" href="{% url 'register' %}">-->
+<!--            <div class="box-2">-->
+<!--                <div class="btn btn-two">-->
+<!--                    <span>Регистрация</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </h2>-->
+<!-- <h2>-->
+<!--        <a class="register" href="{% url 'login' %}">-->
+<!--            <div class="box-2">-->
+<!--                <div class="btn btn-two">-->
+<!--                    <span>Вход</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </h2>-->
+
+<!--{% endif %}-->
     <div class="main_round">
                 <div class="round"></div>
                 <div class="round2"></div>
@@ -66,5 +70,14 @@
     {% block content %}
 
     {% endblock %}
+<div class="right_games">
+    {% if game %}
+    {% for i in game %}
+    <div class="game_icon">
+        <img src="{{i.img.url}}" onerror="this.src='https://www.ixbt.com/img/x780x600/n1/news/2021/10/2/22459ff25f8eff76bddf34124cc2c85b16f4cd4a_large.jpg'" alt="" class="imggame">
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
 </body>
 </html>

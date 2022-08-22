@@ -20,9 +20,9 @@ class RegisterUserForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs = {'class': 'form-input'})
         }
 
-class OrderForm(forms.ModelForm):
+class GamesForm(forms.ModelForm):
     class Meta:
-        model = OrderModel
+        model = GamesModel
         exclude = [""]
 
 class LoginUserForm(AuthenticationForm):
