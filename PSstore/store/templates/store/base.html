@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load game_tags %}
     {% load static %}
     <link  rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <meta charset="UTF-8">
@@ -70,14 +71,7 @@
     {% block content %}
 
     {% endblock %}
-<div class="right_games">
-    {% if game %}
-    {% for i in game %}
-    <div class="game_icon">
-        <img src="{{i.img.url}}" onerror="this.src='https://www.ixbt.com/img/x780x600/n1/news/2021/10/2/22459ff25f8eff76bddf34124cc2c85b16f4cd4a_large.jpg'" alt="" class="imggame">
-    </div>
-    {% endfor %}
-    {% endif %}
-</div>
+{% get_categories %}
+
 </body>
 </html>

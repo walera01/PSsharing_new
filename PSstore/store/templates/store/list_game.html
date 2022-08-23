@@ -1,0 +1,11 @@
+<div class="right_games">
+    <div class="right_games_back">
+    {% if model %}
+        {% for i in model %}
+            <div class="game_icon">
+                <img src="{{i.img.url}}" onerror="this.src='https://www.ixbt.com/img/x780x600/n1/news/2021/10/2/22459ff25f8eff76bddf34124cc2c85b16f4cd4a_large.jpg'" alt="" class="scale">
+            </div>
+        {% endfor %}
+    {% endif %}
+        </div>
+</div>

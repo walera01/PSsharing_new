@@ -5,19 +5,24 @@
     {% csrf_token %}
     <div class="fields_register">
         <p class="label_register">Имя</p>
-        <p class="field_register"><input name="name" type="text"></p>
+        <p class="field_register"><input placeholder="Ваше имя" minlength="2" name="name" type="text"></p>
 
         <p class="label_register">Номер телефона</p>
-        <p class="field_register"><input name="tel" type="tel"></p>
+        <p class="field_register"><input placeholder="+375 44 588 88 88"  minlength="7"  name="tel" type="tel"></p>
 
         <p class="field_register">
         {% if err %}
             <p class="errorlist">{{err}}</p>
         {% endif %}
-            <p class="label_register">С
-            <input class="data" type="date" name="calender" value="{{now}}" min="{{now}}"></p>
-            <p class="label_register">До
-            <input class="data" type="date" name="calender_end" value="{{now}}" min="{{now}}"></p>
+            <br>
+            <p class="label_register">С |</p>
+            <p class="label_register">
+                <input class="data" type="date" name="calender" value="{{now}}" min="{{now}}"></p>
+            </br>
+            <br><p class="label_register">До|</p>
+            <p class="label_register">
+                <input class="data" type="date" name="calender_end" value="{{tommorow}}" min="{{now}}">
+            </p></br>
         </p>
         <button type="submit" class="register-wrap">
             <a class="register">

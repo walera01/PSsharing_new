@@ -40,14 +40,13 @@ div[class*=box] {
 }
 
 
-.box-2 { background-color: black;
+.box-2 {;
     margin-left: 10vw;
 
 }
 .register-wrap{
     border-style: none;
-    background-color: inherit;
-
+    background-color: rgba(0,0,0,0);
 
 }
 .btn {
@@ -109,22 +108,28 @@ div[class*=box] {
 }
 
 .fields_register{
-  margin-left: 25vw;
-  width: 70vw;
-    position: absolute;
+    margin-left: 18vw;
+    width: 42vw;
+    background-color: rgb(0,0,0,.45);
+    padding: 5vw;
 
 }
 .label_register{
-  font-size: 2vw;
+    font-size: 2vw;
     display: inline-block;
+    color: #FFFFFF;
+    padding: 0 2px 0 0;
+
+
 }
 .field_register input{
   width: 35vw;
   height: 3vw;
   font-size: 3vw;
-  border-radius: 20px;
-  box-shadow: 0 0 9px 3px aqua;
+  /*border-radius: 20px;*/
+  /*box-shadow: 0 0 9px 3px aqua;*/
     font-family: "JetBrains Mono Light";
+
 }
 .div_button{
     margin-left: 10vw;
@@ -272,13 +277,11 @@ div[class*=box] {
     font-family: "JetBrains Mono Light";
 }
 .errorlist{
-    position: absolute;
+
     font-size: 3vw;
     color: white;
     font-family: "JetBrains Mono Light";
-    padding: 5px;
     background-color: cadetblue;
-    opacity: .5;
     box-shadow: 0 0 30px 3px darkcyan;
 }
 .right_games{
@@ -292,17 +295,23 @@ div[class*=box] {
 }
 .game_icon img{
     width: 6vw;
-    display: inline-block;
+    display:block;
     float: left;
-    padding: 1%;
+    padding: 0.1vw;
     object-fit: cover;
-    height: 7vw;
+    height: 7.5vw;
+
 
 }
 .game_icon img:hover{
     width: 10vw;
     height: auto;
+    margin-left: -5vw;
 
-
-
+}
+.scale {
+    transition: 1s; /* Время эффекта */
+   }
+.scale:hover {
+transform: scale(1.2); /* Увеличиваем масштаб */
 }
