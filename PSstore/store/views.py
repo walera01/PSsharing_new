@@ -63,7 +63,7 @@ def order(request, id):
         }
     if request.method == 'POST':
         if not request.POST.get('calender_end') or request.POST.get('calender_end') >= request.POST.get('calender'):
-            if len(request.POST.get('name'))>2 and len(request.POST.get('tel'))>7:
+            if len(request.POST.get('name')) > 2 and len(request.POST.get('tel')) > 7:
                 model.name = request.POST.get('name')
                 model.number = request.POST.get('tel')
                 model.order_date = request.POST.get('calender')
